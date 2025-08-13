@@ -7,4 +7,4 @@ services:
         source: ./functions
         target: /home/deno/functions
     ports:
-      - "8007:9000"
+      - "8000:9000"
