@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-// import { Resend } from "npm:resend@2.0.0";
-import { Resend } from "https://esm.sh/resend@2.0.0";
+import { Resend } from "npm:resend@2.0.0";
+// import { Resend } from "https://esm.sh/resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -87,10 +87,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email
     const emailResponse = await resend.emails.send({
       from: "I3S Sécurité <onboarding@resend.dev>",
-      to: [
-        "contact@incendie3s.com",
-        `${process.env.TEST_CC_EMAIL || "zeroman@yopmail.com"}`,
-      ], // Remplacez par votre vraie adresse
+      to: ["contact@incendie3s.com", "zeroman@yopmail.com"], // Remplacez par votre vraie adresse
       subject: `Nouvelle demande de devis - ${orderData.nom}`,
       html: emailContent,
     });
