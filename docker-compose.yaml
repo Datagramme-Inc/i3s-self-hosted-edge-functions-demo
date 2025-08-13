@@ -6,5 +6,5 @@ services:
       - type: bind
         source: ./functions
         target: /home/deno/functions
-    ports:
-      - "8000:9000"
+    # ports:
+    #   - "8000:9000"
